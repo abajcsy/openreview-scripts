@@ -22,12 +22,12 @@ Hi Program Chairs,
 
 Thanks for submitting a venue request.
 
-We have set up the venue based on the information that you provided here: https://openreview.net/forum?id={noteId}
+We have set up the venue based on the information that you provided here: {baseurl}/forum?id={noteId}
 
 You can use the following links to access to the conference:
 
-Venue home page: https://openreview.net/group?id={conference_id}
-Venue Program Chairs console: https://openreview.net/group?id={program_chairs_id}
+Venue home page: {baseurl}/group?id={conference_id}
+Venue Program Chairs console: {baseurl}/group?id={program_chairs_id}
 
 If you need to make a change to the information provided in your request form, please edit/revise it directly. We will update your venue accordingly.
 
@@ -36,7 +36,7 @@ If you need special features that are not included in your request form, you can
 Thanks!
 
 OpenReview Team
-                '''.format(noteId = forum.id, conference_id = conference.get_id(), program_chairs_id = conference.get_program_chairs_id())
+                '''.format(noteId = forum.id, conference_id = conference.get_id(), program_chairs_id = conference.get_program_chairs_id(), baseurl=client.baseurl)
             }
         )
         client.post_note(comment_note)
